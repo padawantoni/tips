@@ -13,7 +13,7 @@ let config = {
   mobileFirst: true,
   responsive: [
     {
-      breakpoint: 690,
+      breakpoint: 600,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
@@ -23,7 +23,7 @@ let config = {
     },
     {
       // remove slick no breakpoint abaixo
-      breakpoint: 815,
+      breakpoint: 768,
       settings: "unslick"
     },
   ]
