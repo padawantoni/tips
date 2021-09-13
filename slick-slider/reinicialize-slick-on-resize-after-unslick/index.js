@@ -1,15 +1,14 @@
-//aponta o elemento do slider
+//set slider div
 let slider = $(".wrapper");
 
-// cria a configuração do slick
+// create slick config as a variable
 let config = {
   infinite: false,
   slidesToShow: 1,
   slidesToScroll: 1,
   dots: false,
   arrows: true,
-  // usa a config base do slick invertido
-  // sendo considerado mobile em primeiro lugar
+  // this setting below uses the base config as default for mobile devices
   mobileFirst: true,
   responsive: [
     {
@@ -22,21 +21,21 @@ let config = {
       }
     },
     {
-      // remove slick no breakpoint abaixo
+      // remove slick on below breakpoint
       breakpoint: 768,
       settings: "unslick"
     },
   ]
 };
 
-// inicia o slick
+// slick init
 slider.slick(config)
 
-//monitora redimencionamento da tela
+// watch screen resizing
 $(window).on('resize', function() {
-  //checa o tamanho da tela e se o slider não está inicializado
+  // checks screen size and if slider is not initialized
   if( $(window).width() <= 768 &&  !slider.hasClass('slick-initialized')) {
-    //reinicia o slider se a condição acima for true
+    // reinit slick if the above condition is true
     slider.slick(config);
    }
 });
